@@ -165,5 +165,15 @@ AdsWarden.prototype = {
             }
         }
         return result;
+    },
+
+    /*
+        monitor clicks on ads
+     */
+    monitorClicksOn: function(id) {
+        var ad = document.getElementById(id);
+        ad.addEventListener('click',function(){
+            console.log('Clicked!');
+        });
     }
 };

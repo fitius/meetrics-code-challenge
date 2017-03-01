@@ -12,6 +12,7 @@ var warden_config = {
     'document_focused':{},
     'document_nothidden':{}
 };
+warden.monitorClicksOn('ad');
 
 /*
     Helper function for pretty descriptive string
