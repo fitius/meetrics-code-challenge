@@ -8,7 +8,7 @@
  */
 var warden = new AdsWarden();
 var warden_config = {
-    'inside_viewport':{threshold: 1.0},
+    'inside_viewport':{threshold: 1.0}, // using threshold 1.0 - we want 100% of advert to be visible
     'document_focused':{},
     'document_nothidden':{}
 };
