@@ -1,0 +1,5 @@
+1) what determines ads viewability - that could realy change over time, so we got to have a way to efficiently modify rules.
+2) some times the script will run in hostily enviorment - got to protect against that
+    1) Hide the code as much as we can from outside overrides
+    2) Doublecheck that window is a native window object and windows members are what we expect them to be
+3) okay we also got to track clicks - probably it would be good to have an option to tell user clicks from autoclicks

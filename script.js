@@ -4,8 +4,8 @@
  *                                                                                              *
  ************************************************************************************************/
 var adIsViewable = true,
-  viewabilityTime = 0,
-  adElement = document.getElementById("ad");
+    viewabilityTime = 0,
+    adElement = document.getElementById("ad");
 
 /**
  * Logs the viewability values in the console
@@ -13,7 +13,9 @@ var adIsViewable = true,
  * @override
  */
 window.log = function () {
-  console.log("Ad is viewable: ", adIsViewable, "\nViewability time of the ad in sec:", viewabilityTime);
+    var warden = new AdsWarden();
+    warden.getVisibility('ad');
+    console.log("Ad is viewable: ", adIsViewable, "\nViewability time of the ad in sec:", viewabilityTime);
 };
 
 /************************************************************************************************
