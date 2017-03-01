@@ -13,3 +13,8 @@ Solution logs everything to console including
     - What percentage of advert is visible
     - if advert is not viewable what rule was violated
     - clicks on the advert
+
+Future impovements could be
+    - check if some one actively tring to interfer with our code and force it to consider advert viwable
+    - add some reporting mechanism so we could send results to our server
+    - cases when advert is closed by another HTML element or set to be invisible using CSS
