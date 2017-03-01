@@ -18,7 +18,7 @@ RectHelper.prototype = {
      returns rect object originated at (0,0) with provided dimensions
      */
     makeZeroBasedRect: function(height, width){
-        return this.makeRect(0, 0, height, width)
+        return this.makeRect(0, 0, height, width);
     },
 
     makeRect: function(left, top, height, width){

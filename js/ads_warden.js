@@ -42,7 +42,7 @@ AdsWarden.prototype = {
      */
     checkSingleRule: function(id, ruleConfig, ruleName){
         if(ruleName in this.rules){
-            return this.rules[ruleName].checkVisibility(id, ruleConfig)
+            return this.rules[ruleName].checkVisibility(id, ruleConfig);
         }
     },
     /*
@@ -55,7 +55,7 @@ AdsWarden.prototype = {
         var result = {visible: true, violatedRules:[]};
         for (var ruleName in rulesConfig) {
             if (rulesConfig.hasOwnProperty(ruleName)) {
-                result = this.combineResults(result, this.checkSingleRule(id, rulesConfig[ruleName], ruleName), ruleName)
+                result = this.combineResults(result, this.checkSingleRule(id, rulesConfig[ruleName], ruleName), ruleName);
             }
         }
         return result;

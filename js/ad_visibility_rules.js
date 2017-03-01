@@ -21,7 +21,7 @@ InViewportRule.prototype.checkVisibility = function(id, ruleConfig){
     return {
         visible: ruleConfig.threshold ? overlapping >= ruleConfig.threshold : overlapping===1.0,
         overlapping: overlapping
-    }
+    };
 };
 
 function DocumentFocusedRule() {
@@ -31,7 +31,7 @@ DocumentFocusedRule.prototype = new IAdVisibilityRule();
 DocumentFocusedRule.prototype.checkVisibility = function(id, ruleConfig){
     return {
         visible: document.hasFocus()
-    }
+    };
 };
 
 function DocumentNotHiddenRule() {
@@ -41,5 +41,5 @@ DocumentNotHiddenRule.prototype = new IAdVisibilityRule();
 DocumentNotHiddenRule.prototype.checkVisibility = function(id, ruleConfig){
     return {
         visible: !document.hidden
-    }
+    };
 };

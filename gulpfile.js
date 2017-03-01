@@ -1,7 +1,9 @@
 var gulp  = require('gulp'),
     gutil = require('gulp-util'),
     concat = require('gulp-concat'),
-    htmlmin = require('gulp-htmlmin');
+    htmlmin = require('gulp-htmlmin'),
+    jshint = require('gulp-jshint'),
+    stylish = require('jshint-stylish');
 
 gulp.task('process-html', function() {
     return gulp.src('./html/*.html')
@@ -12,6 +14,8 @@ gulp.task('process-html', function() {
 
 gulp.task('process-js', function() {
     return gulp.src('./js/*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter(stylish))
         .pipe(concat('script.js'))
         //only uglify if gulp is ran with '--type production'
         .pipe(gutil.env.type === 'prod' ? uglify() : gutil.noop())
