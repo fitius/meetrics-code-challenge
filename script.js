@@ -8,8 +8,9 @@
  */
 var warden = new AdsWarden();
 var warden_config = {
-    'inside_viewport':{threshold: 0.75},
-    'document_focused':{}
+    'inside_viewport':{threshold: 1.0},
+    'document_focused':{},
+    'document_nothidden':{}
 };
 
 /*
@@ -30,7 +31,6 @@ function getDescriptiveString(result) {
 window.log = function () {
     var result = warden.getVisibility('ad', warden_config);
     console.log(getDescriptiveString(result));
-    //console.log("Ad is viewable: ", adIsViewable, "\nViewability time of the ad in sec:", viewabilityTime);
 };
 
 /************************************************************************************************

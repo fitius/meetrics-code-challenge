@@ -101,6 +101,15 @@ DocumentFocusedRule.prototype.checkVisibility = function(id, ruleConfig){
     }
 };
 
+function DocumentNotHiddenRule() {
+    IAdVisibilityRule.call(this);
+}
+DocumentNotHiddenRule.prototype = new IAdVisibilityRule();
+DocumentNotHiddenRule.prototype.checkVisibility = function(id, ruleConfig){
+    return {
+        visible: !document.hidden
+    }
+};
 
 /*
     Get and sanitize data for advert position and viewport size, using RectHelper to detect visibility
@@ -112,7 +121,8 @@ function AdsWarden(){
      */
     this.rules = {
         'inside_viewport': new InViewportRule(),
-        'document_focused': new DocumentFocusedRule()
+        'document_focused': new DocumentFocusedRule(),
+        'document_nothidden': new DocumentNotHiddenRule()
         };
 }
 
@@ -137,7 +147,7 @@ AdsWarden.prototype = {
         Getting the rule by its name and executing it against current config and advert id
      */
     checkSingleRule: function(id, ruleConfig, ruleName){
-        if(this.rules[ruleName]){
+        if(ruleName in this.rules){
             return this.rules[ruleName].checkVisibility(id, ruleConfig)
         }
     },
