@@ -1,0 +1,32 @@
+{
+  "name": "meetrics-code-challenge",
+  "version": "1.0.0",
+  "description": "Dear future colleague,",
+  "main": "index.html",
+  "dependencies": {
+    "rewire": "2.5.2",
+    "mocha": "3.2.0",
+    "mocha-phantomjs": "4.1.0",
+    "gulp": "3.9.1",
+    "gulp-sourcemap": "1.0.1",
+    "gulp-concat": "2.6.1",
+    "gulp-htmlmin": "3.0.0",
+    "chai": "3.5.0",
+    "jshint": "2.9.4",
+    "gulp-jshint": "2.0.4",
+    "jshint-stylish": "2.2.1"
+
+
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "./run_tests.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/dovydenko/meetrics-code-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/dovydenko/meetrics-code-challenge#readme"
+}
