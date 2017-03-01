@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-mocha ./ads_warden_test.js  #-R nyan
+mocha ./test/rect_helper_test.js
+mocha-phantomjs ./test/test.html

@@ -1,22 +1,10 @@
-/**
- * Created by adovydenko on 3/1/17.
- */
 var assert = require('assert');
 var rewire = require('rewire');
 
-var ads_warden = rewire('./ads_warden');
-
-describe('Array', function() {
-    describe('#indexOf()', function() {
-        it('should return -1 when the value is not present', function() {
-            assert.equal(-1, [1,2,3].indexOf(4));
-        });
-    });
-});
-
+var rect_helper = rewire('../js/rect_helper.js');
 
 describe('RectHelper()', function() {
-    var RectHelper = ads_warden.__get__('RectHelper');
+    var RectHelper = rect_helper.__get__('RectHelper');
 
     it('should be able to create object', function() {
         assert(typeof new RectHelper() === 'object');
@@ -124,16 +112,4 @@ describe('RectHelper()', function() {
     });
 
 
-});
-
-describe('AdsWarden', function() {
-    var AdsWarden = ads_warden.__get__('AdsWarden');
-
-    describe('AdsWarden()', function() {
-        it('should be able to create object', function() {
-            assert(typeof new AdsWarden() === 'object');
-        });
-    });
-
-    // TODO: Add more tests on this object
 });
