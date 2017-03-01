@@ -21,6 +21,8 @@ function getDescriptiveString(result) {
     var str = result.visible ? 'The ad is viewable ' : 'The ad is NOT viewable ';
     if(result.violatedRules.length > 0)
         str += 'Violated rules are: ' + result.violatedRules.join(',');
+    if(result.overlapping)
+        str += ' '+(result.overlapping*100).toFixed(2)+ '% of advert is visible';
     return str;
 }
 
