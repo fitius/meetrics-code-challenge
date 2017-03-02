@@ -30,14 +30,17 @@ InViewportRule.prototype = new IAdVisibilityRule();
  */
 InViewportRule.prototype.checkVisibility = function(id, ruleConfig){
     var ad = document.getElementById(id);
-    var adRect = ad.getBoundingClientRect();
-    var viewportRect = this.rectHelper.makeZeroBasedRect(window.innerHeight, window.innerWidth);
-
-    var overlapping = this.rectHelper.getOverlappingRatio(adRect, viewportRect);
-    return {
-        visible: ruleConfig.threshold ? overlapping >= ruleConfig.threshold : overlapping===1.0,
-        overlapping: overlapping
-    };
+    if (ad) {
+        var adRect = ad.getBoundingClientRect();
+        var viewportRect = this.rectHelper.makeZeroBasedRect(window.innerHeight, window.innerWidth);
+        var overlapping = this.rectHelper.getOverlappingRatio(adRect, viewportRect);
+        return {
+            visible: ruleConfig.threshold ? overlapping >= ruleConfig.threshold : overlapping===1.0,
+            overlapping: overlapping
+        };
+    }else{
+        return {visible: false, overlapping: 0.0};
+    }
 };
 
 /** The rule to check user to be engaged (focus on the page) */
@@ -159,7 +162,7 @@ AdsWarden.prototype = {
     monitorClicksOn: function(id) {
         var ad = document.getElementById(id);
             if (ad) {
-            ad.addEventListener('click',function(){
+                ad.addEventListener('click',function(){
                 console.log('Clicked!');
             });
         }

@@ -82,7 +82,7 @@ AdsWarden.prototype = {
     monitorClicksOn: function(id) {
         var ad = document.getElementById(id);
             if (ad) {
-            ad.addEventListener('click',function(){
+                ad.addEventListener('click',function(){
                 console.log('Clicked!');
             });
         }
